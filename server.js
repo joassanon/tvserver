@@ -36,7 +36,7 @@ var nms = new NodeMediaServer(config)
 // })
 const express = require('express')
 const app = express()
-const port = 80
+const port = 4000
 
 app.get('/', (req, res) => {
 nms.run();
