@@ -34,13 +34,13 @@ var nms = new NodeMediaServer(config)
 // nms.on('preConnect',(id,StreamPath,args) => {
 //     console.log(id,StreamPath,args)
 // })
-nms.run();
 const express = require('express')
 const app = express()
 const port = 4000
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+nms.run();
+  res.send()
 })
 
 app.listen(port, () => {
