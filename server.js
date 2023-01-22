@@ -13,21 +13,21 @@ const config = {
     mediaroot: './media',
     allow_origin: '*'
   },
-//   auth: {
-//     play: true,
-//     publish: true,
-//     secret: 'nodemedia2017privatekey'
-//   },
-//   trans: {
-//     ffmpeg: '/usr/local/bin/ffmpeg',
-//     tasks: [
-//       {
-//         app: 'live',
-//         mp4: true,
-//         mp4Flags: '[movflags=frag_keyframe+empty_moov]',
-//       }
-//     ]
-//   }
+  //   auth: {
+  //     play: true,
+  //     publish: true,
+  //     secret: 'nodemedia2017privatekey'
+  //   },
+  //   trans: {
+  //     ffmpeg: '/usr/local/bin/ffmpeg',
+  //     tasks: [
+  //       {
+  //         app: 'live',
+  //         mp4: true,
+  //         mp4Flags: '[movflags=frag_keyframe+empty_moov]',
+  //       }
+  //     ]
+  //   }
 };
 
 var nms = new NodeMediaServer(config)
@@ -38,9 +38,10 @@ const express = require('express')
 const app = express()
 const port = 4000
 
-app.get('/', (req, res) => {
-nms.run();
-  res.send()
+app.get('/live/:id', (req, res) => {
+  nms.run();
+  // nms.on('')
+  res.send('ok')
 })
 
 app.listen(port, () => {
