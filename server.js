@@ -38,7 +38,7 @@ const express = require('express')
 const app = express()
 const port = 4000
 
-app.get('/live/:id', (req, res) => {
+app.get('*', (req, res) => {
   nms.run();
   // nms.on('')
   res.send('ok')
