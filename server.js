@@ -34,15 +34,4 @@ var nms = new NodeMediaServer(config)
 nms.on('preConnect',(id,StreamPath,args) => {
     console.log(id,StreamPath,args)
 })
-const express = require('express')
-const app = express()
-const port = 4000
-app.get('*', (req, res) => {
   nms.run();
-  // nms.on('')
-  res.send('ok')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
