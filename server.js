@@ -9,7 +9,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 80,
     mediaroot: './media',
     allow_origin: '*'
   },
@@ -31,7 +31,7 @@ const config = {
 };
 
 var nms = new NodeMediaServer(config)
-nms.on('preConnect',(id,StreamPath,args) => {
-    console.log(id,StreamPath,args)
+nms.on('preConnect',(...args) => {
+    console.log(...args)
 })
   nms.run();
